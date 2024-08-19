@@ -6,7 +6,6 @@ import CreateRoomsScreen from './screens/CreateRoomsScreen';
 import ChatRoomScreen from './screens/ChatRoomScreen/ChatRoomScreen';
 import colors from './constants/Color';
 import Entypo from '@expo/vector-icons/Entypo';
-import AntDesign from '@expo/vector-icons/AntDesign';
 
 const Stack = createNativeStackNavigator();
 
@@ -36,7 +35,8 @@ export default function App() {
           name="CreateRooms"
           component={CreateRoomsScreen}
           options={{
-            headerTitle: 'Odalar'
+            headerTitle: 'Odalar',
+            headerBackVisible: false
           }}
         />
         <Stack.Screen
