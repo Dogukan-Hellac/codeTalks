@@ -19,15 +19,6 @@ export default function App() {
         headerShadowVisible: false,
       }}>
         <Stack.Screen
-          name="ChatRoom"
-          component={ChatRoomScreen}
-          options={{
-            headerTitle: 'react',
-            headerRight: () => { return <Entypo name="log-out" size={24} color={colors.secondary} /> },
-            headerLeft: () => { return <AntDesign name="arrowleft" size={24} color={colors.secondary} /> }
-          }}
-        />
-        <Stack.Screen
           name="LogIn"
           component={LogInScreen}
           options={{
@@ -46,6 +37,21 @@ export default function App() {
           component={CreateRoomsScreen}
           options={{
             headerTitle: 'Odalar'
+          }}
+        />
+        <Stack.Screen
+          name="ChatRoom"
+          component={ChatRoomScreen}
+          options={{
+            headerTitle: 'react',
+            headerRight: () => {
+              return (
+                <Entypo
+                  name="log-out"
+                  size={24}
+                  color={colors.secondary}
+                />)
+            }
           }}
         />
       </Stack.Navigator>
