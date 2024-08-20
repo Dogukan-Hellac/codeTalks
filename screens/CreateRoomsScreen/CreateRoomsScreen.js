@@ -7,8 +7,8 @@ import CreateRoomsModal from '../../components/Modals/CreateRoomsModal'
 import { writeNewPost, listPost } from '../../features/Database'
 
 
-export default function CreateRoomsScreen() {
-    const [isModalVisible, setModalVisible] = useState(false);
+export default function CreateRoomsScreen({ navigation }) {
+    const [isModalVisible, setModalVisible] = useState(false)
     const [text, setText] = useState('')
     const [rooms, setRooms] = useState([])
 
@@ -17,13 +17,17 @@ export default function CreateRoomsScreen() {
     }
 
     const handlePosts = () => {
-        writeNewPost(text)
+        writeNewPost('roomName' ,text, 'rooms/', 'rooms')
         setText('')
         setModalVisible(false)
     }
 
-    useEffect(()=>{
-       listPost(setRooms)
+    const pressCard = (item) => {
+        navigation.navigate('ChatRoom', { item })
+    }
+
+    useEffect(() => {
+        listPost(setRooms, 'rooms/')
     }, [])
 
     return (
@@ -37,12 +41,14 @@ export default function CreateRoomsScreen() {
             />
             <FloatingButton onPress={toggleModal} />
             <FlatList
-            data={rooms}
-            keyExtractor={(item)=> item.id}
-            numColumns={2}
-            renderItem={({item})=> {return(
-               <RoomsCard title={item.roomName}/>
-            )}}
+                data={rooms}
+                keyExtractor={(item) => item.id}
+                numColumns={2}
+                renderItem={({ item }) => {
+                    return (
+                        <RoomsCard title={item.roomName} onPress={() => pressCard(item)} />
+                    )
+                }}
             />
         </View>
     )

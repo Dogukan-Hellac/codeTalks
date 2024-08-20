@@ -19,6 +19,14 @@ export default function App() {
         headerShadowVisible: false,
       }}>
         <Stack.Screen
+          name="CreateRooms"
+          component={CreateRoomsScreen}
+          options={{
+            headerTitle: 'Odalar',
+            headerBackVisible: false
+          }}
+        />
+        <Stack.Screen
           name="LogIn"
           component={LogInScreen}
           options={{
@@ -32,19 +40,11 @@ export default function App() {
             headerShown: false
           }}
         />
-        <Stack.Screen
-          name="CreateRooms"
-          component={CreateRoomsScreen}
-          options={{
-            headerTitle: 'Odalar',
-            headerBackVisible: false
-          }}
-        />
+        
         <Stack.Screen
           name="ChatRoom"
           component={ChatRoomScreen}
           options={{
-            headerTitle: 'react',
             headerRight: () => {
               return (
                 <Entypo
