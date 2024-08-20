@@ -15,6 +15,7 @@ export default StyleSheet.create({
         borderWidth: 1,
         borderRadius: 50,
         borderColor: colors.primary,
+        zIndex: 1
     },
     icon: {
     }

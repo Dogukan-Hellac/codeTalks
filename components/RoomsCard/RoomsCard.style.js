@@ -3,14 +3,15 @@ import colors from "../../constants/Color";
 
 export default StyleSheet.create({
     container: {
-        margin: 10,
+        flex: 1,
+        margin: 15,
         padding: 10,
         justifyContent: 'center',
         alignItems: 'center',
-        borderRadius: 5,
+        borderRadius: 10,
         borderWidth: 1,
         borderColor: colors.gray,
-        height: '20%'
+        height: 150,
     },
     title: {
         color: colors.secondary,

@@ -4,7 +4,7 @@ import React from 'react'
 import Modal from "react-native-modal"
 import styles from './CreateRoomsModal.style'
 
-export default function CreateRoomsModal({ isModalVisible, toggleModal }) {
+export default function CreateRoomsModal({ isModalVisible, toggleModal, onChangeText, value, onPress }) {
     return (
         <Modal
             isVisible={isModalVisible}
@@ -12,8 +12,15 @@ export default function CreateRoomsModal({ isModalVisible, toggleModal }) {
             style={styles.modal}
         >
             <View style={styles.container}>
-                <TextInput placeholder='Oda adı..' multiline/>
-                <Button title="Ekle" />
+                <TextInput
+                    onChangeText={onChangeText}
+                    value={value}
+                    placeholder='Oda adı..'
+                    multiline />
+                <Button
+                    onPress={onPress}
+                    title="Ekle"
+                />
             </View>
         </Modal>
     )

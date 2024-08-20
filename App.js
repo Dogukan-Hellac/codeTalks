@@ -6,6 +6,7 @@ import CreateRoomsScreen from './screens/CreateRoomsScreen';
 import ChatRoomScreen from './screens/ChatRoomScreen/ChatRoomScreen';
 import colors from './constants/Color';
 import Entypo from '@expo/vector-icons/Entypo';
+import app from './firebaseConfig'
 
 const Stack = createNativeStackNavigator();
 
