@@ -4,6 +4,7 @@ import FloatingButton from '../../components/FloatingButton'
 import CreateRoomsModal from '../../components/Modals/CreateRoomsModal'
 import styles from './ChatRoomScreen.style'
 import { writeNewPost, listPost } from '../../features/Database'
+import MessageCard from '../../components/MessageCard/MessageCard'
 
 export default function ChatRoomScreen({ navigation, route }) {
     const [isModalVisible, setModalVisible] = useState(false)
@@ -49,7 +50,7 @@ export default function ChatRoomScreen({ navigation, route }) {
                 keyExtractor={(item) => item.id}
                 renderItem={({ item }) => {
                     return (
-                        <Text>{item.message}</Text>
+                        <MessageCard item={item}/>
                     )
                 }}
             />

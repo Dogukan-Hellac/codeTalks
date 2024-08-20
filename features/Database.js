@@ -4,7 +4,8 @@ function writeNewPost(valueName ,value, path, keyName) {
     const db = getDatabase()
 
     const postData = {
-        [valueName]: value
+        [valueName]: value,
+        date: (new Date()).toISOString()
     }
 
     const newPostKey = push(child(ref(db), keyName)).key
