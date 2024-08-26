@@ -18,14 +18,7 @@ export default function App() {
         headerTintColor: colors.secondary,
         headerShadowVisible: false,
       }}>
-        <Stack.Screen
-          name="CreateRooms"
-          component={CreateRoomsScreen}
-          options={{
-            headerTitle: 'Odalar',
-            headerBackVisible: false
-          }}
-        />
+
         <Stack.Screen
           name="LogIn"
           component={LogInScreen}
@@ -40,7 +33,6 @@ export default function App() {
             headerShown: false
           }}
         />
-        
         <Stack.Screen
           name="ChatRoom"
           component={ChatRoomScreen}
@@ -53,6 +45,14 @@ export default function App() {
                   color={colors.secondary}
                 />)
             }
+          }}
+        />
+        <Stack.Screen
+          name="CreateRooms"
+          component={CreateRoomsScreen}
+          options={{
+            headerTitle: 'Odalar',
+            headerBackVisible: false
           }}
         />
       </Stack.Navigator>
